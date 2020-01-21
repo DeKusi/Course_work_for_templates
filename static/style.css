@@ -46,6 +46,14 @@ label{
 	border-color:  #005BFF;
 	border-style: dotted;
 }
+button{
+	font-family: Courier;
+	border-radius: 10px;
+	padding: 6px 0px 6px 6px;
+	border-style: none;
+	border-color:  #005BFF;
+	background-color: #87CEEB ;
+}
 button:hover{
 	background-color: #005BFF;
 	color: #87CEEB ;
