@@ -46,3 +46,13 @@ label{
 	border-color:  #005BFF;
 	border-style: dotted;
 }
+button:hover{
+	background-color: #005BFF;
+	color: #87CEEB ;
+}
+a{
+	color: #87CEEB ;
+}
+a:hover{
+	color: #005BFF;
+}
