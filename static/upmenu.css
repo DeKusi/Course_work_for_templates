@@ -11,6 +11,7 @@ th {
 	padding-bottom:5px;
 }
 td{
+	height: 180px;
 	padding: 10px;
 	background-color:white;
 	border-radius:75px;
@@ -51,9 +52,6 @@ p{
 	height:50px;
 	background-color: white;
 	border-radius:15px;
-}
-td{
-	
 }
 .list{
 	font-weight: bold;
