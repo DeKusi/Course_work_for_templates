@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Личный кабинет</title>
+<link href="upmenu.css" type="text/css" rel="stylesheet">		
 </head>
 <body>
 <button>
@@ -29,14 +30,14 @@
     {{ request.session.login }}
 </h1>
 
-<p>
+<p class="list">
 <button>
     <a href="/user_list">
         Список пользователей
     </a>
 </button>
 </p>
-<p>
+<p class="list">
 <button>
     <a href="/add_user">
         Добавить пользователя
@@ -44,7 +45,7 @@
 </button>
 </p>
 
-<p>
+<p class="list">
 <button>
     <a href="/list_del_user">
         Удалить пользователя
