@@ -63,3 +63,10 @@ p{
 	background-color: #87CEEB;
 	border-radius:15px;
 }
+.spec{
+	font-weight: bold;
+	background-color: white;
+	border-radius:15px;
+	border-style:none;
+	
+}
