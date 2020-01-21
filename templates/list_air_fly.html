@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Все аэропорты</title>
-    <link href="../../static/upmenu.css" type="text/css" rel="stylesheet">
+    <link href="upmenu.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 
@@ -30,17 +30,23 @@
     </button>
 {% endif %}
 <h1>Все аэропорты</h1>
+<table>
 {% for air in airp %}
     {% if air.status == 'true' %}
-    <p>
+    <tr>
+	<td>
         {{ air.name }}
-        <button>
+	</td>
+	<td>
+        <button class="spec">
             <a href="{% url 'add_flight1' air.id%}">
                 Добавить рейс
             </a>
         </button>
-    </p>
+	</td>
+    </tr>
     {% endif %}
 {% endfor %}
+</table>
 </body>
 </html>
