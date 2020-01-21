@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{name}}</title>
+</head>
+<body>
+<button>
+    <a href="/">
+        Главная
+    </a>
+</button>
+{% if 'id' not in request.session %}
+<button>
+    <a href="/login/">
+        Авторизация
+    </a>
+</button>
+    <button>
+        <a href="/registration/">
+            Регистрация
+        </a>
+    </button>
+{% elif request.session.position == 'user'%}
+    <button>
+        <a href="/account/">
+            {{ request.session.login }}
+        </a>
+    </button>
+    <button>
+        <a href="/logout">
+             Выйти
+        </a>
+    </button>
+{% elif request.session.position == 'moderator' or request.session.position == 'admin'%}
+    <button>
+        <a href="/account/">
+            Управление
+        </a>
+    </button>
+    <button>
+        <a href="prop_tik">
+            Купленные билеты
+        </a>
+    </button>
+    <button>
+        <a href="/logout">
+             Выйти
+        </a>
+    </button>
+{% endif %}
+<h1>{{ name }}</h1>
+{% if flights == 0 %}
+<p>Рейсов нет</p>
+{% else %}
+ <table>
+        <tr>
+            <td>
+                <p>Время отправления</p>
+            </td>
+            <td>
+                <p>Время прибытия</p>
+            </td>
+            <td>
+                <p>Пункт назначения</p>
+            </td>
+            <td>
+                <p>Название</p>
+            </td>
+            <td>
+                <p>Модель</p>
+            </td>
+            <td>
+                <p>Тип</p>
+            </td>
+            <td>
+                <p>Классы обслуживания</p>
+            </td>
+            {% if 'id' in request.session %}
+            <td>
+                <p>Билеты</p>
+            </td>
+            {% endif%}
+        </tr>
+    {% for fly in flights %}
+        <tr>
+            <td>
+                <p>
+                    {{ fly.departure_time }}
+                </p>
+            </td>
+             <td>
+                 <p>
+                     {{fly.arrival_time}}
+                 </p>
+             </td>
+             <td>
+                <p>
+                    {{fly.surf_point}}
+                </p>
+             </td>
+             <td>
+                <p>
+                    {{fly.plane.name}}
+                </p>
+             </td>
+             <td>
+                <p>
+                    {{fly.plane.model}}
+                </p>
+             </td>
+             <td>
+                <p>
+                    {{fly.plane.type}}
+                </p>
+             </td>
+            <td>
+                {% for class in fly.plane.service_classes %}
+                <p>
+                    {{class}}
+                </p>
+                {% endfor %}
+             </td>
+            {% if 'id' in request.session and fly.slug in list_slug%}
+                <td>
+                <button>
+                        Билет куплен
+                </button>
+                </td>
+            {% else %}
+                {% if 'id' in request.session %}
+                <td>
+                <button>
+                    <a href="{% url 'add_ticket' id fly.id%}">
+                        Купить билет
+                    </a>
+                </button>
+                </td>
+            {% endif %}
+
+
+            {% endif %}
+        </tr>
+{% endfor %}
+ </table>
+{% endif %}
+</body>
+</html>

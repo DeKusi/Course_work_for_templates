@@ -1,0 +1,229 @@
+{
+  "users": [
+    {
+      "login": "Alex",
+      "id": 1,
+      "password": "1234",
+      "position": "admin",
+      "status": "true",
+      "tickets": [
+        {
+          "id": 1,
+          "slug": 1,
+          "status": "true",
+          "point_of_departure": "Аэропорт Домодедово",
+          "surf_point": "Аэропорт Пулково",
+          "departure_time": "11:00",
+          "arrival_time": "11:30",
+          "plane": {
+            "name": "Boeing",
+            "model": "777",
+            "type": "Пассажирский самолёт",
+            "service_classes": [
+              "Эконом",
+              "Бизнес",
+              "Первый"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "login": "P4nuta",
+      "id": 2,
+      "password": "4321",
+      "position": "user",
+      "status": "true",
+      "tickets": [
+        {
+          "id": 1,
+          "slug": 1,
+          "point_of_departure": "Аэропорт Домодедово",
+          "surf_point": "Аэропорт Пулково",
+          "departure_time": "11:00",
+          "arrival_time": "11:30",
+          "plane": {
+            "name": "Boeing",
+            "model": "777",
+            "type": "Пассажирский самолёт",
+            "service_classes": [
+              "Эконом",
+              "Бизнес",
+              "Первый"
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "slug": 3,
+          "point_of_departure": "Аэропорт Шереметьево ",
+          "surf_point": "Аэропорт Самуи",
+          "departure_time": "12:15",
+          "arrival_time": "19:00",
+          "plane": {
+            "name": "CRAIC",
+            "model": "CR929",
+            "type": "Пассажирский самолёт",
+            "service_classes": [
+              "Эконом",
+              "Бизнес",
+              "Первый"
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "slug": 2,
+          "status": "true",
+          "point_of_departure": "Аэропорт Домодедово",
+          "surf_point": "Аэропорт Бойсе",
+          "departure_time": "15:15",
+          "arrival_time": "22:40",
+          "plane": {
+            "name": "Airbus",
+            "model": "A330",
+            "type": "Пассажирский самолёт",
+            "service_classes": [
+              "Бизнес",
+              "Первый"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "login": "De_Kusi",
+      "id": 3,
+      "password": "123",
+      "position": "moderator",
+      "status": "true",
+      "tickets": [
+        {
+          "id": 1,
+          "slug": 5,
+          "point_of_departure": "Аэропорт Быково",
+          "surf_point": "Аэропорт Тбилиси",
+          "departure_time": "07:45",
+          "arrival_time": "16:30",
+          "plane": {
+            "name": "Comac",
+            "model": "CR 929",
+            "type": "Пассажирский самолёт",
+            "service_classes": [
+              "Эконом",
+              "Бизнес",
+              "Первый"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "login": "Kate",
+      "id": 4,
+      "password": "1",
+      "position": "user",
+      "status": "true",
+      "tickets": []
+    },
+    {
+      "login": "kdl",
+      "id": 5,
+      "password": "1",
+      "position": "user",
+      "status": "false"
+    },
+    {
+      "login": "Mod1",
+      "id": 6,
+      "password": "1",
+      "position": "moderator",
+      "status": "false",
+      "tickets": []
+    },
+    {
+      "login": "Mod2",
+      "id": 7,
+      "password": "2",
+      "position": "moderator",
+      "status": "false",
+      "tickets": []
+    },
+    {
+      "login": "Use1",
+      "id": 8,
+      "password": "1",
+      "position": "user",
+      "status": "false",
+      "tickets": []
+    },
+    {
+      "login": "User2",
+      "id": 9,
+      "password": "2",
+      "position": "user",
+      "status": "false",
+      "tickets": []
+    },
+    {
+      "login": "Mod3",
+      "id": 10,
+      "password": "3",
+      "position": "moderator",
+      "status": "false",
+      "tickets": []
+    },
+    {
+      "login": "User3",
+      "id": 11,
+      "password": "3",
+      "position": "user",
+      "status": "true",
+      "tickets": []
+    },
+    {
+      "login": "User 4",
+      "id": 12,
+      "password": "4",
+      "position": "user",
+      "status": "true",
+      "tickets": []
+    },
+    {
+      "login": "User5",
+      "id": 13,
+      "password": "5",
+      "position": "user",
+      "status": "true",
+      "tickets": [
+        {
+          "id": 1,
+          "slug": 5,
+          "status": "true",
+          "point_of_departure": "Аэропорт Быково",
+          "surf_point": "Аэропорт Тбилиси",
+          "departure_time": "07:45",
+          "arrival_time": "16:30",
+          "plane": {
+            "name": "Comac",
+            "model": "CR 929",
+            "type": "Пассажирский самолёт",
+            "service_classes": [
+              "Эконом",
+              "Бизнес",
+              "Первый"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "login": "User6",
+      "id": 14,
+      "password": "6",
+      "position": "user",
+      "status": "false",
+      "tickets": []
+    }
+  ]
+}

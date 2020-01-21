@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if request.session.position == 'user' %}
+    <title>Личный кабинет</title>
+    {% else %}
+    <title>Купленные билеты</title>
+    {% endif %}
+</head>
+<body>
+<button>
+    <a href="/">
+        Главная
+    </a>
+</button>
+
+{% if request.session.position == 'user'%}
+    <button>
+        <a href="/account/">
+            {{ request.session.login }}
+        </a>
+    </button>
+    <button>
+        <a href="/logout">
+             Выйти
+        </a>
+    </button>
+{% elif request.session.position == 'moderator' or request.session.position == 'admin'%}
+    <button>
+        <a href="/account/">
+            Управление
+        </a>
+    </button>
+    <button>
+        <a href="#">
+            Купленные билеты
+        </a>
+    </button>
+    <button>
+        <a href="/logout">
+             Выйти
+        </a>
+    </button>
+{% endif %}
+<h1>
+    {{ request.session.login }}
+</h1>
+<p>Билеты</p>
+{% if data.0 != 0 %}
+<table>
+        <tr>
+            <td>
+                <p>Пункт Отправления</p>
+            </td>
+            <td>
+                <p>Пункт назначения</p>
+            </td>
+            <td>
+                <p>Время отправления</p>
+            </td>
+            <td>
+                <p>Время прибытия</p>
+            </td>
+            <td>
+                <p>Название</p>
+            </td>
+            <td>
+                <p>Модель</p>
+            </td>
+            <td>
+                <p>Тип</p>
+            </td>
+            <td>
+                <p>Классы обслуживания</p>
+            </td>
+        </tr>
+    {% for fly in data %}
+        <tr>
+            <td>
+                <p>
+                    {{fly.point_of_departure}}
+                </p>
+            </td>
+            <td>
+                <p>
+                    {{fly.surf_point}}
+                </p>
+            </td>
+            <td>
+                <p>
+                    {{ fly.departure_time }}
+                </p>
+            </td>
+             <td>
+                 <p>
+                     {{fly.arrival_time}}
+                 </p>
+             </td>
+             <td>
+                <p>
+                    {{fly.plane.name}}
+                </p>
+             </td>
+             <td>
+                <p>
+                    {{fly.plane.model}}
+                </p>
+             </td>
+             <td>
+                <p>
+                    {{fly.plane.type}}
+                </p>
+             </td>
+            <td>
+                {% for class in fly.plane.service_classes %}
+                <p>
+                    {{class}}
+                </p>
+                {% endfor %}
+             </td>
+        </tr>
+    {% endfor %}
+ </table>
+    {% else %}
+    <p>Нет купленных билетов</p>
+{% endif %}
+</body>
+</html>

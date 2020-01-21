@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>
+Добавление рейса
+</title>
+</head>
+<link href="../../static/style.css" type="text/css" rel="stylesheet">
+<header>
+<img src="../../static/airling1.png">
+<h1>
+Добавление рейса
+</h1>
+</header>
+<body>
+{% if request.session.position == 'moderator' or request.session.position == 'admin'%}
+    <button>
+        <a href="/">
+            Главная
+        </a>
+    </button>
+    <button>
+        <a href="/account/">
+            Управление
+        </a>
+    </button>
+    <button>
+        <a href="prop_tik">
+            Купленные билеты
+        </a>
+    </button>
+    <button>
+        <a href="/logout">
+             Выйти
+        </a>
+    </button>
+{% endif %}
+
+<div class="table">
+ <form action="{% url 'add_flight1' air_id%}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br><input type="submit" value="Добавить"/></br>
+    </form>
+    </div>
+{% if error  == 'Пользователь уже зрегистрирован' %}
+    <p>
+    {{ error }}
+    </p>
+{% endif %}
+<button>
+    <a href="/">
+        Назад
+    </a>
+</button>
+</body>
+</html>
