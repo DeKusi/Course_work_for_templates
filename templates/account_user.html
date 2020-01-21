@@ -66,43 +66,15 @@
     {% for fly in data %}
         <tr>
             <td>{{fly.point_of_departure}}</td>
-            <td>
-                 
-                    {{fly.surf_point}}
-                 
-            </td>
-            <td>
-                 
-                    {{ fly.departure_time }}
-                 
-            </td>
-             <td>
-                  
-                     {{fly.arrival_time}}
-                  
-             </td>
-             <td>
-                 
-                    {{fly.plane.name}}
-                 
-             </td>
-             <td>
-                 
-                    {{fly.plane.model}}
-                 
-             </td>
-             <td>
-                 
-                    {{fly.plane.type}}
-                 
-             </td>
-            <td>
-                {% for class in fly.plane.service_classes %}
-                <p>
+            <td>{{fly.surf_point}}</td>
+            <td>{{ fly.departure_time }}</td>
+             <td>{{fly.arrival_time}}</td>
+             <td>{{fly.plane.name}}</td>
+             <td>{{fly.plane.model}}</td>
+             <td>{{fly.plane.type}}</td>
+            <td>{% for class in fly.plane.service_classes %}
                     {{class}}
-                </p>
-                {% endfor %}
-             </td>
+             {% endfor %}</td>
         </tr>
     {% endfor %}
  </table>
